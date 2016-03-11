@@ -1,0 +1,30 @@
+body {
+  background: #EAEAEA; }
+  body nav.navbar {
+    opacity: 0.8;
+    margin-bottom: 0; }
+  body .content {
+    margin-top: 40px; }
+    body .content article {
+      padding: 25px;
+      background: #FFFFFF; }
+    body .content .inner-wrap .featured-posts {
+      text-align: center; }
+      body .content .inner-wrap .featured-posts section {
+        display: inline-block; }
+      body .content .inner-wrap .featured-posts .featured-post img {
+        max-width: 100%; }
+    body .content .main-content {
+      margin-top: 30px; }
+      body .content .main-content aside .recent-posts {
+        background: #FFFFFF; }
+        body .content .main-content aside .recent-posts h2 {
+          margin-top: 0; }
+        body .content .main-content aside .recent-posts ul {
+          list-style-type: none; }
+
+.main-header {
+  background-image: url("http://2o7fsh4anuayrnrhe3us6v71.wpengine.netdna-cdn.com/wp-content/uploads/2015/06/new-york-city.jpg");
+  height: 400px; }
+
+/*# sourceMappingURL=style.css.map */
