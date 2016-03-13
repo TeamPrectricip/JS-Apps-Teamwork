@@ -2,48 +2,81 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Welcome Team Prectricip Gallery</title>
+    <title>About us</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/about.css">
     <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div id="wrapper">
-    <header>
-        <h1>People who are guilty of this gallery</h1>
 
-        <nav>
-            <ul>
-                <li><a href="index.html">Gallery</a></li>
-                <li><a href="about.html">Team</a></li>
-            </ul>
+<div id="wrapper">
+    <header class="main-header">
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    TeamPrectricip
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="nav navbar-nav pull-right">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active" ><a href="#">Gallery</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#">Login</a></li>
+                </ul>
+            </div>
         </nav>
+        <div class="cover"></div>
     </header>
-    <ul class="persons">
-        <li>
-            <h3>Maria Dimitrova</h3>
-            <img src="images/creators/person.png" alt="Maria Dimitrova">
-        </li>
-        <li>
-            <h3>Hristo Vutov</h3>
-            <img src="images/creators/person.png" alt="Hristo Vutov">
-        </li>
-        <li>
-		
-            <h3>Lazarov</h3>
-            <img src="images/creators/person.png" alt="Lazarov">
-        </li>
-        <li>
-            <h3>Zdravko</h3>
-            <img src="images/creators/person.png" alt="Zdravko">
-        </li>
-        <li>
-            <h3>Georgi Matsov</h3>
-            <img src="images/creators/person.png" alt="Georgi Matsov">
-        </li>
-        <li>
-            <h3>Georgi Matsov</h3>
-            <img src="images/creators/person.png" alt="Georgi Matsov">
-        </li>
-    </ul>
+
+    <h1>
+        People who are guilty of this gallery
+    </h1>
+
+    <main>
+        <section class="col-xs-12 col-sm-4 col-lg-3">
+
+            <li>
+                <h3>Maria Dimitrova</h3>
+                <img src="images/creators/person.png" alt="Maria Dimitrova">
+            </li>
+            <li>
+                <h3>Hristo Vutov</h3>
+                <img src="images/creators/person.png" alt="Hristo Vutov">
+            </li>
+            <li>
+
+                <h3>Lazarov</h3>
+                <img src="images/creators/person.png" alt="Lazarov">
+            </li>
+
+        </section>
+
+        <section class="col-xs-12 col-sm-4 col-lg-3">
+
+            <li>
+                <h3>Zdravko</h3>
+                <img src="images/creators/person.png" alt="Zdravko">
+            </li>
+            <li>
+                <h3>Georgi Matsov</h3>
+                <img src="images/creators/person.png" alt="Georgi Matsov">
+            </li>
+            <li>
+                <h3>Georgi Matsov</h3>
+                <img src="images/creators/person.png" alt="Georgi Matsov">
+            </li>
+
+        </section>
+    </main>
     <footer>
         <div>All rights reserved. <a href="https://github.com/TeamPrectricip/JS-Apps-Teamwork">Team Pretricip</a></div>
     </footer>

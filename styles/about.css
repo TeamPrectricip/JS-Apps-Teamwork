@@ -1,0 +1,32 @@
+li h3 {
+    text-align: center;
+
+}
+
+li img {
+    width: 100px;
+    height: 100px;
+    margin:auto;
+}
+
+main {
+    width: 100%;
+    display: block;
+    height: 1400px;
+    background-image: url("rocket.png");
+    background-repeat: no-repeat;
+    margin:auto;
+}
+
+footer {
+    display:block;
+}
+
+li {
+    list-style-type: none;
+}
+
+h1 {
+    margin-bottom: 50px;
+    display: block;
+}
