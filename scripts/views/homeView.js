@@ -5,6 +5,13 @@ app.homeView = (function() {
         $.get('templates/home.html', function(template) {
             var rendered = Mustache.render(template, data);
             $(selector).html(rendered);
+            $('.featured-post').on('click', function () {
+                var id = $(this).attr("data-id");
+                var url = '#/post/' + id;
+                $.sammy(function () {
+                    this.trigger('redirectUrl', {url : url})
+                });
+            })
 
         });
     }

@@ -15,13 +15,14 @@ app.homeController = (function() {
                 .then(function(posts) {
                     var data = {
                         posts: []
-                    }
+                    };
 
                     posts.forEach(function(post) {
                         data.posts.push({
                             title: post.title,
                             author: post.author,
-                            text: post.text
+                            text: post.text,
+                            id: post._id
                         });
                     });
 
