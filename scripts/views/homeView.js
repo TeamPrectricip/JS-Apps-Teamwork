@@ -1,7 +1,7 @@
 var app = app || {};
 
 app.homeView = (function() {
-    function showHomePage(selector) {
+    function showHomePage(selector, data) {
         $.get('templates/home.html', function(template) {
             var rendered = Mustache.render(template, data);
             $(selector).html(rendered);
