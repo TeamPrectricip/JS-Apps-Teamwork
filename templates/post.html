@@ -1,9 +1,13 @@
 {{#posts}}
 <section class="col-xs-12 col-sm-4">
     <article class="featured-post">
-        <img src="http://www.planwallpaper.com/static/images/background-gmail-google-images_FG2XwaO.jpg" alt="image">
+        <img src="http://www.planwallpaper.com/static/images/background-gmail-google-images_FG2XwaO.jpg" alt="image" height="300" width="300">
         <header><h3>{{title}}</h3></header>
         <p>{{text}}</p>
     </article>
 </section>
 {{/posts}}
+<div class="comments"></div>
+
+<textarea name="comment" id="textArea" cols="30" rows="10"></textarea>
+<input type="button" id="addComment" value="Submit">

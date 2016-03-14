@@ -8,14 +8,18 @@ var app = app || {};
         var homeView = app.homeView.load();
         var blogOwnerView = app.blogOwnerView.load();
         var postView = app.postView.load();
+        var commentView = app.commentView.load();
 
         var homeModel = Object.create(app.homeModel).init(requester);
         var blogOwnerModel = Object.create(app.blogOwnerModel).init(requester);
         var postModel = Object.create(app.postModel).init(requester);
+        var commentModel = Object.create(app.commentModel).init(requester);
 
         var homeController = Object.create(app.homeController).init(homeModel, homeView);
         var blogOwnerController = Object.create(app.blogOwnerController).init(blogOwnerModel, blogOwnerView);
-        var postController = app.postController.load(postModel,postView);
+        var postController = app.postController.load(postModel, postView);
+        var commentController = app.commentController.load(commentModel, commentView);
+
 
         this.get('#/', function() {
             homeController.loadAllPosts(selector);
@@ -31,6 +35,14 @@ var app = app || {};
 
         this.bind('redirectUrl', function(e, data) {
             this.redirect(data.url);
+        });
+
+        this.bind('add-comment', function(e, data) {
+            commentController.addComment(data);
+        });
+
+        this.bind('get-comments', function (e, data) {
+            commentController.getCommentsByPostId(data);
         });
     });
 
