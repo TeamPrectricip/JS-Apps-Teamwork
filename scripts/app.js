@@ -21,7 +21,7 @@ var app = app || {};
         var commentController = app.commentController.load(commentModel, commentView);
 
 
-        this.get('#/', function() {
+        this.get('#/home', function() {
             homeController.loadAllPosts(selector);
         });
 
@@ -31,6 +31,10 @@ var app = app || {};
 
         this.get('#/post/:id', function(){
             postController.getPostById(selector,this.params['id']);
+        });
+
+        this.bind('login', function(e, data) {
+            blogOwnerController.login(data);
         });
 
         this.bind('redirectUrl', function(e, data) {
@@ -46,5 +50,5 @@ var app = app || {};
         });
     });
 
-    router.run('#/');
+    router.run('#/home');
 }());
