@@ -11,7 +11,12 @@ app.homeView = (function() {
                 $.sammy(function () {
                     this.trigger('redirectUrl', {url : url})
                 });
-            })
+            });
+
+            $('#login-btn').on('click', function() {
+                Sammy(function() {
+                });
+            });
 
         });
     }

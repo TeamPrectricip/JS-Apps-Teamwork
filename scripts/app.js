@@ -2,7 +2,7 @@ var app = app || {};
 
 (function() {
     var router = Sammy(function() {
-        var selector = $('.content');
+        var selector = $('#wrapper');
         var requester = Object.create(app.requester).init('kid_-y1QostQk-', 'owner', '1234');
 
         var homeView = app.homeView.load();
