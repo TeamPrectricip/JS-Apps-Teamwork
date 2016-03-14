@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gallery creators</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/q/q.js"></script>
+    <script src="bower_components/sammy/lib/min/sammy-0.7.6.min.js"></script>
+    <script src="bower_components/mustache/mustache.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+        <header class="main-header">
+            <nav class="navbar navbar-default">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">
+                        TeamPrectricip
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="nav navbar-nav pull-right">
+                        <li class="active"><a href="#index">Home</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="#">Login</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="cover"></div>
+        </header>
+        <div class="content container">
+            <div class="row main-content">
+                <main class="col-xs-12 col-sm-8">
+                    <article>
+                        <header>
+                            <h2>Title</h2>
+                            <div class="post-info">
+                                <span>March 11, 2016</span>
+                                <span>Admin</span>
+                            </div>
+                        </header>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam scelerisque nisi a lectus facilisis tristique. Phasellus ac metus semper, convallis augue vel, viverra velit. Ut dapibus efficitur libero, sit amet dictum lacus efficitur sit amet. Etiam tempor in purus in pellentesque. Maecenas id aliquam velit. Aliquam scelerisque augue pulvinar nisi finibus, a cursus nisi laoreet. Praesent ac congue sapien, in pulvinar ipsum. Nullam lacus velit, rutrum eu libero ut, placerat mattis libero. Maecenas feugiat, quam nec finibus ultricies, sem nisi imperdiet dolor, eu pharetra massa neque non mauris. Proin ac lectus vel metus interdum cursus sit amet eu erat. Etiam vel faucibus nisl. Proin sed feugiat sem.</p>
+                        <img src="http://www.gettyimages.fr/gi-resources/images/Homepage/Featured/FR/FR_39_2Pack_158259920.jpg" alt="img">
+                    </article>
+                </main>
+                <aside class="col-xs-12 col-sm-4">
+                    <div class="recent-posts">
+                        <h2>Recent Posts</h2>
+                        <ul>
+                            <li><a href=""></a>JavaScript</li>
+                            <li><a href=""></a>Universe</li>
+                            <li><a href=""></a>Trending</li>
+                            <li><a href=""></a>Sports</li>
+                            <li><a href=""></a>Fiction</li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+        <footer>
+            <div>All rights reserved. <a href="https://github.com/TeamPrectricip/JS-Apps-Teamwork">Team Pretricip</a></div>
+        </footer>
+    </div>
+    <script src="scripts/helpers/requester.js"></script>
+
+    <script src="scripts/BindingModels/post.js"></script>
+
+    <script src="scripts/models/homeModel.js"></script>
+<<<<<<< HEAD
+    <script src="scripts/models/blogOwnerModel.js"></script>
+
+    <script src="scripts/views/homeView.js"></script>
+    <script src="scripts/views/blogOwnerView.js"></script>
+
+    <script src="scripts/controllers/homeController.js"></script>
+    <script src="scripts/controllers/blogOwnerController.js"></script>
+=======
+    <script src="scripts/models/postModel.js"></script>
+
+    <script src="scripts/views/homeView.js"></script>
+    <script src="scripts/views/postView.js"></script>
+
+    <script src="scripts/controllers/homeController.js"></script>
+    <script src="scripts/controllers/postController.js"></script>
+
+>>>>>>> 06802cd89a6cd77dcd5d880da4bbcf5d909059e5
+    <script src="scripts/app.js"></script>
+</body>
+</html>
