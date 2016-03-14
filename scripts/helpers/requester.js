@@ -3,9 +3,10 @@ var app = app || {};
 app.requester = (function(){
     "use strict"
     var requester = {
-        init: function(appId, appSecret) {
+        init: function(appId, user, pass) {
             this.appId = appId;
-            this.appSecret = appSecret;
+            this.user = user;
+            this.pass = pass;
             this.baseUrl = 'https://baas.kinvey.com/';
             return this;
         },
@@ -36,7 +37,7 @@ app.requester = (function(){
                     $.ajaxSetup({
                         beforeSend: function(xhr, settings) {
                             if(!useSession) {
-                                token = that.appId + ':' + that.appSecret;
+                                token = that.user + ':' + that.pass;
                                 xhr.setRequestHeader('Authorization', 'Basic ' + btoa(token));
                             } else {
                                 token = sessionStorage['sessionAuth'];
