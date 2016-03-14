@@ -22,7 +22,7 @@ var app = app || {};
         });
 
         this.get('#/login', function() {
-            blogOwnerController.showLoginPage();
+            blogOwnerController.showLoginPage('#wrapper');
         });
 
         this.get('#/post/:id', function(){
