@@ -11,8 +11,12 @@ app.blogOwnerController = (function() {
         login: function(credentials) {
             this._model.login(credentials)
                 .then(function(success) {
-                    debugger;
-                }).done();
+                    sessionStorage['sessionAuth'] = success._kmd.authtoken;
+                    sessionStorage['userId'] = success._id;
+                    $.sammy(function () {
+                        this.trigger('redirectUrl', {url:'#/home'});
+                    })
+            }).done();
         },
 
         showLoginPage: function(selector) {
