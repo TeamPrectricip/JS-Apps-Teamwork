@@ -18,7 +18,10 @@ app.postController = function () {
                 posts.forEach(function(post) {
                     data.posts.push(new PostInputModel(
                         post._id,
-                        post.title
+                        post.title,
+                        post.text,
+                        post.tags
+
                     ));
                 });
                 _this._viewBag.showPost(selector, data);

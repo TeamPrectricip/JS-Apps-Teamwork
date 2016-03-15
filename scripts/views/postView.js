@@ -9,9 +9,10 @@ app.postView = (function () {
                 this.trigger('get-comments', {parent: $('.comments'), id: data.posts[0]._id})
             });
             $('#addComment').on('click', function(){
-                textArea = $('#textArea');
+                var textArea = $('#textArea').val();
                 $.sammy(function () {
-                    this.trigger('add-comment', {postId: data.posts[0]._id, content: textArea.val()})
+                    this.trigger('add-comment', {postId: data.posts[0]._id, content: textArea, parent: $('.comments')})
+                    $('#textArea').val(null);
                 });
             });
         })

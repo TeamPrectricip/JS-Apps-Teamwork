@@ -48,7 +48,7 @@ var app = app || {};
         });
 
         this.bind('get-comments', function (e, data) {
-            commentController.getCommentsByPostId(data);
+            //commentController.getCommentsByPostId(data);
         });
     });
 

@@ -6,7 +6,7 @@ app.commentController = function () {
         this._viewBag = viewBag;
     }
 
-    CommentController.prototype.getCommentsByPostId = function (data, id) {
+    CommentController.prototype.getCommentsByPostId = function (data) {
         var _this = this;
 
         this._model.getCommentsByPostId(data.id)
@@ -39,7 +39,11 @@ app.commentController = function () {
 
         this._model.addComment(commentOutputModel)
             .then(function() {
-                _this.getCommentsByPostId(data.postId);
+                var model = {
+                    parent : data.parent,
+                    id : data.postId
+                }
+                _this.getCommentsByPostId(model);
             })
     };
 
