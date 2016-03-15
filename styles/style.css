@@ -27,6 +27,9 @@ body #wrapper .login-page {
   width: 360px;
   padding: 8% 0 0;
   margin: auto; }
+body #wrapper .comment {
+  margin: 15px;
+  background: #FFFFFF; }
 body #wrapper .form {
   z-index: 1;
   background: #FFFFFF;
@@ -73,6 +76,3 @@ body #wrapper .form {
   height: 400px; }
 
 /*# sourceMappingURL=style.css.map */
-#logout-btn {
-  color: red;
-}
