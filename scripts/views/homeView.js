@@ -7,7 +7,7 @@ app.homeView = (function () {
             $(selector).html(rendered);
             $('.featured-post').on('click', function () {
                 var id = $(this).attr("data-id");
-                var url = '#/post/' + id;
+                var url = '#/post/details/' + id;
                 $.sammy(function () {
                     this.trigger('redirectUrl', {url: url})
                 });
@@ -18,6 +18,14 @@ app.homeView = (function () {
                 });
             });
 
+            $('#searchButton').on('click', function(){
+                var textBoxData = $('#searchTextBox').val();
+                var url = '#/post/byTag/' + textBoxData;
+                $.sammy(function () {
+                    this.trigger('redirectUrl', {url: url})
+                });
+            })
+
             /*Change ID and inner text of Login button when user is logged*/
             if (sessionStorage.userId) {
                 $('#login-btn')
@@ -26,7 +34,10 @@ app.homeView = (function () {
                     .text('Logout');
             }
         });
-    }
+    };
+
+
+
 
     return {
         load: function () {

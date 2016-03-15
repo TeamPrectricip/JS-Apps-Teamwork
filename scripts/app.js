@@ -32,8 +32,12 @@ var app = app || {};
         this.get('#/logout', function() {
             blogOwnerController.logout();
         });
-        this.get('#/post/:id', function(){
+        this.get('#/post/details/:id', function(){
             postController.getPostById(wrapper ,this.params['id']);
+        });
+
+        this.get('#/post/byTag/:tag', function(){
+            postController.getPostByTagName(wrapper ,this.params['tag']);
         });
 
         this.bind('login', function(e, data) {

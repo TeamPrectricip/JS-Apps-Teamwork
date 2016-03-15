@@ -16,12 +16,44 @@ app.postView = (function () {
                 });
             });
         })
-    }
+    };
+
+    function showFilteredPosts(selector, data) {
+        $.get('templates/filteredPosts.html', function (templ) {
+            var rendered = Mustache.render(templ, data);
+            console.log(data);
+            $(selector).html(rendered);
+            $('.featured-post').on('click', function () {
+                var id = $(this).attr("data-id");
+                var url = '#/post/details/' + id;
+                $.sammy(function () {
+                    this.trigger('redirectUrl', {url: url})
+                });
+            });
+
+            $('#login-btn').on('click', function () {
+                Sammy(function () {
+                });
+            });
+
+            $('#searchButton').on('click', function(){
+
+                var textBoxData = $('#searchTextBox').val();
+                var url = '#/post/byTag/' + textBoxData;
+                $.sammy(function () {
+                    this.trigger('redirectUrl', {url: url})
+                });
+            })
+        })
+    };
+
+
 
     return {
         load: function () {
             return {
-                showPost: showPost
+                showPost: showPost,
+                showFilteredPosts: showFilteredPosts
             }
         }
     }
