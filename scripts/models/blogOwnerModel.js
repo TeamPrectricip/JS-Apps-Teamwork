@@ -12,6 +12,11 @@ app.blogOwnerModel = (function() {
         login: function(credentials) {
             var loginUrl = this._serviceUrl + '/login';
             return this._requester.post(loginUrl, credentials);
+        },
+
+        logout: function() {
+            var logoutUrl = this._serviceUrl + '/_logout';
+            return this._requester.post(logoutUrl, null, true);
         }
     };
 
