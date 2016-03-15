@@ -33,7 +33,7 @@ var app = app || {};
             blogOwnerController.logout();
         });
         this.get('#/post/:id', function(){
-            postController.getPostById(content ,this.params['id']);
+            postController.getPostById(wrapper ,this.params['id']);
         });
 
         this.bind('login', function(e, data) {
@@ -49,7 +49,7 @@ var app = app || {};
         });
 
         this.bind('get-comments', function (e, data) {
-            //commentController.getCommentsByPostId(data);
+            commentController.getCommentsByPostId(data);
         });
     });
 
