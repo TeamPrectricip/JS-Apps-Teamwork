@@ -2,7 +2,8 @@ var app = app || {};
 
 (function() {
     var router = Sammy(function() {
-        var selector = $('#wrapper');
+        var wrapper = $('#wrapper');
+        var content = $('.content');
         var requester = Object.create(app.requester).init('kid_-y1QostQk-', 'owner', '1234');
 
         var homeView = app.homeView.load();
@@ -22,17 +23,17 @@ var app = app || {};
 
 
         this.get('#/home', function() {
-            homeController.loadAllPosts(selector);
+            homeController.loadAllPosts(wrapper);
         });
 
         this.get('#/login', function() {
-            blogOwnerController.showLoginPage('#wrapper');
+            blogOwnerController.showLoginPage(wrapper);
         });
         this.get('#/logout', function() {
             blogOwnerController.logout();
         });
         this.get('#/post/:id', function(){
-            postController.getPostById(selector,this.params['id']);
+            postController.getPostById(content ,this.params['id']);
         });
 
         this.bind('login', function(e, data) {

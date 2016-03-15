@@ -4,7 +4,7 @@ app.postView = (function () {
     function showPost(selector, data) {
         $.get('templates/post.html', function (templ) {
             var rendered = Mustache.render(templ, data);
-            $(selector).html(rendered);
+            $('.content').html(rendered);
             $.sammy(function () {
                 this.trigger('get-comments', {parent: $('.comments'), id: data.posts[0]._id})
             });
