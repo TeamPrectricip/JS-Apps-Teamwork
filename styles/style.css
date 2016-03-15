@@ -73,3 +73,6 @@ body #wrapper .form {
   height: 400px; }
 
 /*# sourceMappingURL=style.css.map */
+#logout-btn {
+  color: red;
+}

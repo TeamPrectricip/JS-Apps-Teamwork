@@ -14,9 +14,9 @@ main {
     margin: 0 auto;
     display: block;
     height: 780px;
-    background-image: url("rocket.png");
+    background-image: url('../images/rocket.png');
     background-repeat: no-repeat;
-    margin:auto;
+    margin: auto;
 }
 
 footer {

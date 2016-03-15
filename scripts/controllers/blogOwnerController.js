@@ -19,24 +19,9 @@ app.blogOwnerController = (function () {
                 }).done();
         },
 
-        logout: function () {
-            this._model.logout()
-                .then(function() {
-                    sessionStorage.clear();
-
-                    Sammy(function() {
-                        this.trigger('redirectUrl', {url: '#/home'});
-                    });
-                }).done();
-        },
-
         showLoginPage: function (selector) {
             this._view.showLoginPage(selector);
         },
-
-        showLogoutPage: function () {
-            this._view.showLogoutPage();
-        }
     }
 
     return blogOwnerController;
