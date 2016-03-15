@@ -13,14 +13,21 @@ app.blogOwnerController = (function () {
                 .then(function (success) {
                     sessionStorage['sessionAuth'] = success._kmd.authtoken;
                     sessionStorage['userId'] = success._id;
-                    $.sammy(function () {
+                    Sammy(function () {
                         this.trigger('redirectUrl', {url: '#/home'});
                     })
                 }).done();
         },
 
         logout: function () {
-            sessionStorage.clear()
+            this._model.logout()
+                .then(function() {
+                    sessionStorage.clear();
+
+                    Sammy(function() {
+                        this.trigger('redirectUrl', {url: '#/home'});
+                    });
+                }).done();
         },
 
         showLoginPage: function (selector) {
