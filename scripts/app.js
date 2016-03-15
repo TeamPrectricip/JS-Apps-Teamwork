@@ -29,7 +29,7 @@ var app = app || {};
             blogOwnerController.showLoginPage('#wrapper');
         });
         this.get('#/logout', function() {
-            blogOwnerController.showLogoutPage('#wrapper');
+            blogOwnerController.logout();
         });
         this.get('#/post/:id', function(){
             postController.getPostById(selector,this.params['id']);
