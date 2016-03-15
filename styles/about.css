@@ -10,9 +10,10 @@ li img {
 }
 
 main {
-    width: 100%;
+    width: 960px;
+    margin: 0 auto;
     display: block;
-    height: 1400px;
+    height: 780px;
     background-image: url("rocket.png");
     background-repeat: no-repeat;
     margin:auto;
@@ -29,4 +30,6 @@ li {
 h1 {
     margin-bottom: 50px;
     display: block;
+    width: 960px;
+    margin: 30px auto;
 }

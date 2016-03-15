@@ -28,7 +28,9 @@ var app = app || {};
         this.get('#/login', function() {
             blogOwnerController.showLoginPage('#wrapper');
         });
-
+        this.get('#/logout', function() {
+            blogOwnerController.showLogoutPage('#wrapper');
+        });
         this.get('#/post/:id', function(){
             postController.getPostById(selector,this.params['id']);
         });

@@ -15,3 +15,4 @@ app.sidebarModel = (function () {
 
     return sidebarModel;
 }());
+//TODO not ready!!!
