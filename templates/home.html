@@ -1,71 +1,13 @@
-
-<header class="main-header">
-    <nav class="navbar navbar-default">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">
-                TeamPrectricip
-            </a>
-        </div>
-        <div class="collapse navbar-collapse" id="navbar">
-            <ul class="nav navbar-nav pull-right">
-                <li class="active"><a href="#/home">Home</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="#/login" id="login-btn">Login</a></li>
-            </ul>
-        </div>
-    </nav>
-    <div class="cover"></div>
-</header>
-<div class="content container">
-    <div class="inner-wrap">
-        <div  class="row featured-posts">
-            {{#posts}}
-            <section class="col-xs-12 col-sm-4">
-                <article class="featured-post" data-id="{{id}}">
-                    <img src="http://www.planwallpaper.com/static/images/background-gmail-google-images_FG2XwaO.jpg" alt="image">
-                    <header><h3>{{title}}</h3></header>
-                    <p>{{text}}</p>
-                </article>
-            </section>
-            {{/posts}}
-        </div>
-    </div>
-    <div class="row main-content">
-        <main class="col-xs-12 col-sm-8">
-        <article>
-            <header>
-                <h2>Title</h2>
-                <div class="post-info">
-                    <span>March 11, 2016</span>
-                    <span>Admin</span>
-                </div>
-            </header>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam scelerisque nisi a lectus facilisis tristique. Phasellus ac metus semper, convallis augue vel, viverra velit. Ut dapibus efficitur libero, sit amet dictum lacus efficitur sit amet. Etiam tempor in purus in pellentesque. Maecenas id aliquam velit. Aliquam scelerisque augue pulvinar nisi finibus, a cursus nisi laoreet. Praesent ac congue sapien, in pulvinar ipsum. Nullam lacus velit, rutrum eu libero ut, placerat mattis libero. Maecenas feugiat, quam nec finibus ultricies, sem nisi imperdiet dolor, eu pharetra massa neque non mauris. Proin ac lectus vel metus interdum cursus sit amet eu erat. Etiam vel faucibus nisl. Proin sed feugiat sem.</p>
-            <img src="http://www.gettyimages.fr/gi-resources/images/Homepage/Featured/FR/FR_39_2Pack_158259920.jpg" alt="img">
-        </article>
-        </main>
-        <aside class="col-xs-12 col-sm-4">
-            <div class="recent-posts">
-                <h2>Recent Posts</h2>
-                <ul>
-                    <li><a href=""></a>JavaScript</li>
-                    <li><a href=""></a>Universe</li>
-                    <li><a href=""></a>Trending</li>
-                    <li><a href=""></a>Sports</li>
-                    <li><a href=""></a>Fiction</li>
-                </ul>
-            </div>
-        </aside>
+<div class="inner-wrap">
+    <div  class="row featured-posts">
+        {{#posts}}
+        <section class="col-xs-12 col-sm-4">
+            <article class="featured-post" data-id="{{id}}">
+                <img src="http://www.planwallpaper.com/static/images/background-gmail-google-images_FG2XwaO.jpg" alt="image">
+                <header><h3>{{title}}</h3></header>
+                <p>{{text}}</p>
+            </article>
+        </section>
+        {{/posts}}
     </div>
 </div>
-<footer>
-    <div>All rights reserved. <a href="https://github.com/TeamPrectricip/JS-Apps-Teamwork">Team Pretricip</a></div>
-</footer>
-
