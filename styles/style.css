@@ -23,16 +23,16 @@ body {
         body .content .main-content aside .recent-posts ul {
           list-style-type: none; }
 
-body #wrapper .login-page {
+body .login-page {
   width: 360px;
   padding: 8% 0 0;
   margin: auto; }
-body #wrapper .input-group-btn {
+body .input-group-btn {
   margin-bottom: 10px; }
-body #wrapper .comment {
+body .comment {
   margin: 15px;
   background: #FFFFFF; }
-body #wrapper .form {
+body .form {
   z-index: 1;
   background: #FFFFFF;
   max-width: 360px;
@@ -40,7 +40,7 @@ body #wrapper .form {
   padding: 45px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24); }
-  body #wrapper .form input {
+  body .form input {
     font-family: "Roboto", sans-serif;
     outline: 0;
     background: #f2f2f2;
@@ -50,7 +50,7 @@ body #wrapper .form {
     padding: 15px;
     box-sizing: border-box;
     font-size: 14px; }
-  body #wrapper .form button {
+  body .form button {
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     outline: 0;
@@ -63,13 +63,13 @@ body #wrapper .form {
     -webkit-transition: all 0.3 ease;
     transition: all 0.3 ease;
     cursor: pointer; }
-  body #wrapper .form button:hover, body #wrapper .form button:active, body #wrapper .form button:focus {
+  body .form button:hover, body .form button:active, body .form button:focus {
     background: #43A047; }
-  body #wrapper .form .message {
+  body .form .message {
     margin: 15px 0 0;
     color: #b3b3b3;
     font-size: 12px; }
-    body #wrapper .form .message a {
+    body .form .message a {
       color: #4CAF50;
       text-decoration: none; }
 
