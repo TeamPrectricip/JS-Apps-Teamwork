@@ -32,10 +32,6 @@ app.blogOwnerController = (function () {
 
         showLoginPage: function (selector) {
             this._view.showLoginPage(selector);
-        },
-
-        showLogoutPage: function () {
-            this._view.showLogoutPage();
         }
     }
 
