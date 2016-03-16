@@ -11,16 +11,19 @@ body {
     body .content .inner-wrap .featured-posts {
       text-align: center; }
       body .content .inner-wrap .featured-posts section {
-        display: inline-block; }
+        height: 300px;
+        overflow: hidden; }
+        body .content .inner-wrap .featured-posts section:hover {
+          cursor: pointer; }
       body .content .inner-wrap .featured-posts .featured-post img {
         max-width: 100%; }
-    body .content .main-content {
-      margin-top: 30px; }
-      body .content .main-content aside .recent-posts {
-        background: #FFFFFF; }
-        body .content .main-content aside .recent-posts h2 {
-          margin-top: 0; }
-        body .content .main-content aside .recent-posts ul {
+    body .content aside {
+      background: #FFFFFF; }
+      body .content aside .recent-posts {
+        margin-top: 93px; }
+        body .content aside .recent-posts h2 {
+          text-align: center; }
+        body .content aside .recent-posts ul {
           list-style-type: none; }
 
 body .login-page {

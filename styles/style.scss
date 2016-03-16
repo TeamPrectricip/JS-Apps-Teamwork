@@ -20,7 +20,12 @@ body {
                 text-align: center;
 
                 section {
-                    display: inline-block;
+                    height: 300px;
+                    overflow: hidden;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
                 }
 
                 .featured-post {
@@ -32,20 +37,16 @@ body {
             }
         }
 
-        .main-content {
-            margin-top: 30px;
 
-            aside {
-                .recent-posts {
-                    background: #FFFFFF;
-
-                    h2 {
-                        margin-top: 0;
-                    }
-
-                    ul {
-                        list-style-type: none;
-                    }
+        aside {
+            background: #FFFFFF;
+            .recent-posts {
+                margin-top: 93px;
+                h2 {
+                    text-align: center;
+                }
+                ul {
+                    list-style-type: none;
                 }
             }
         }
