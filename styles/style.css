@@ -27,6 +27,8 @@ body #wrapper .login-page {
   width: 360px;
   padding: 8% 0 0;
   margin: auto; }
+body #wrapper .input-group-btn {
+  margin-bottom: 10px; }
 body #wrapper .comment {
   margin: 15px;
   background: #FFFFFF; }

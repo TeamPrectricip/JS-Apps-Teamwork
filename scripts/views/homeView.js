@@ -40,7 +40,7 @@ app.homeView = (function () {
                 });
 
                 var div = $('<div>',{
-                    class: 'input-group-btn'
+                    class: 'input-group-btn col-xs-12 col-sm-4'
                 });
                 div.append(button);
 
