@@ -36,6 +36,10 @@ var app = app || {};
             postController.getPostById(wrapper ,this.params['id']);
         });
 
+        this.get('#/about', function() {
+            app.showAboutPage(wrapper);
+        });
+
         this.bind('login', function(e, data) {
             blogOwnerController.login(data);
         });
