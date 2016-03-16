@@ -10,11 +10,13 @@ var app = app || {};
         var blogOwnerView = app.blogOwnerView.load();
         var postView = app.postView.load();
         var commentView = app.commentView.load();
+        //var sidebarView = app.sidebarView.load();
 
         var homeModel = Object.create(app.homeModel).init(requester);
         var blogOwnerModel = Object.create(app.blogOwnerModel).init(requester);
         var postModel = Object.create(app.postModel).init(requester);
         var commentModel = Object.create(app.commentModel).init(requester);
+        //var sidebarModel = Object.create(app.sidebarModel).init(requester);
 
         var homeController = Object.create(app.homeController).init(homeModel, homeView);
         var blogOwnerController = Object.create(app.blogOwnerController).init(blogOwnerModel, blogOwnerView);
@@ -24,6 +26,8 @@ var app = app || {};
 
         this.get('#/home', function() {
             homeController.loadAllPosts(selector);
+            
+
         });
 
         this.get('#/login', function() {

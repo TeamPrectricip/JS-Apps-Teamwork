@@ -9,7 +9,7 @@ app.postView = (function () {
                 this.trigger('get-comments', {parent: $('.comments'), id: data.posts[0]._id});
                 this.trigger('visitCounter', {post: data.posts[0]});
             });
-
+    
             var counter = data.posts[0].counter;
             $('#visit-count').text('Visit for ' + counter + '  time');
 
