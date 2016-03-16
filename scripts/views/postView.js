@@ -9,16 +9,27 @@ app.postView = (function () {
                 this.trigger('get-comments', {parent: $('.comments'), id: data.posts[0]._id});
                 this.trigger('visitCounter', {post: data.posts[0]});
             });
-    
+
             var counter = data.posts[0].counter;
             $('#visit-count').text('Visit for ' + counter + '  time');
 
             $('#addComment').on('click', function () {
-                var textArea = $('#textArea').val();
-                $.sammy(function () {
-                    this.trigger('add-comment', {postId: data.posts[0]._id, content: textArea, parent: $('.comments')})
-                    $('#textArea').val(null);
-                });
+                var firstName = $('#firstname').val(),
+                    lastName = $('#lastname').val(),
+                    feedback = $('#feedback').val();
+
+                if(firstName === '' || lastName === '' || feedback === '') {
+                    $('.form-group').addClass('has-error');
+                } else {
+                    $('.form-group').removeClass('has-error');
+                    $.sammy(function () {
+                        this.trigger('add-comment', {postId: data.posts[0]._id, content: feedback, parent: $('.comments')})
+                    });
+
+                    $('#firstname').val('');
+                    $('#lastname').val('');
+                    $('#feedback').val('');
+                }
             });
         });
     };
@@ -35,11 +46,6 @@ app.postView = (function () {
                 });
             });
 
-            $('#login-btn').on('click', function () {
-                Sammy(function () {
-                });
-            });
-
             $('#searchButton').on('click', function(){
 
                 var textBoxData = $('#searchTextBox').val();
@@ -53,20 +59,18 @@ app.postView = (function () {
 
     function createNewPost(selector){
         $.get('templates/addPost.html', function (templ) {
-             var rendered = Mustache.render(templ);
+            var rendered = Mustache.render(templ);
             $(selector).html(rendered);
 
             $('#addComment').on('click', function () {
                 var title = $('#title').val();
                 var text = $('#text').val();
                 var tags = $('#tags').val();
-                if(tags==''||text==''||title==''){
-                    var h3 = $('<h3/>', {
-                        text: "All field must be filled"
-                    });
-                    $('.require').append(h3)
-                }else{
+                if(tags == '' || text == '' || title == ''){
+                    $('.form-group').addClass('has-error');
+                } else {
                     var userId = sessionStorage.userId;
+                    $('.form-group').removeClass('has-error');
                     $.sammy(function () {
                         this.trigger('createPost', {title: title, text: text, tags: tags, userId: userId})
                     });
