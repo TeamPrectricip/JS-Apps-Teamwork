@@ -23,6 +23,14 @@ var app = app || {};
         var postController = app.postController.load(postModel, postView);
         var commentController = app.commentController.load(commentModel, commentView);
 
+        this.before('#/post/create', function() {
+            if (!sessionStorage.userId) {
+                this.redirect('#/login');
+                return false;
+            } else {
+            }
+        });
+
 
         this.get('#/home', function() {
             homeController.loadAllPosts(selector);
@@ -75,7 +83,6 @@ var app = app || {};
         });
 
         this.bind('createPost', function (e, data) {
-            console.log(data);
            postController.createNewPost(selector, data);
         });
     });
