@@ -74,7 +74,37 @@ app.postController = function () {
         this._viewBag.createNewPost(selector);
     };
 
-    PostController.prototype.createNewPost = function(selector, post){
+    PostController.prototype.createNewPost = function(selector, data){
+        var tags = data.tags.split(",");
+        var _this = this;
+        var postOutputModel = {
+            text: data.text,
+            counter: 0,
+            title: data.title,
+            tags: tags,
+            author: {
+                _type: 'KinveyRef',
+                _id: data.userId,
+                _collection: 'user'
+            }
+        };
+        this._model.createPost(postOutputModel) .then(function (posts) {
+            var data = {
+                posts: []
+            };
+
+            posts.forEach(function(post) {
+                data.posts.push(new PostInputModel(
+                    post._id,
+                    post.title,
+                    post.text,
+                    post.tags,
+                    post.author,
+                    post.counter
+                ));
+            });
+            _this._viewBag.showPost(selector, data);
+        })
 
     };
 

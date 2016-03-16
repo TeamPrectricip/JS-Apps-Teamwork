@@ -52,8 +52,26 @@ app.postView = (function () {
     };
 
     function createNewPost(selector){
-        $.get('templates/createNewPost.html', function (templ) {
+        $.get('templates/addPost.html', function (templ) {
              var rendered = Mustache.render(templ);
+            $(selector).html(rendered);
+
+            $('#addComment').on('click', function () {
+                var title = $('#title').val();
+                var text = $('#text').val();
+                var tags = $('#tags').val();
+                if(tags==''||text==''||title==''){
+                    var h3 = $('<h3/>', {
+                        text: "All field must be filled"
+                    });
+                    $('.require').append(h3)
+                }else{
+                    var userId = sessionStorage.userId;
+                    $.sammy(function () {
+                        this.trigger('createPost', {title: title, text: text, tags: tags, userId: userId})
+                    });
+                }
+            })
         });
     };
 

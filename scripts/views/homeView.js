@@ -33,6 +33,19 @@ app.homeView = (function () {
                     .attr('href', '#/logout')
                     .text('Logout');
 
+                var button = $('<button/>', {
+                    text: "Create Post",
+                    id: 'createPost',
+                    class: 'btn btn-default'
+                });
+
+                var div = $('<div>',{
+                    class: 'input-group-btn'
+                });
+                div.append(button);
+
+                $('.createPostDiv').append(div);
+
                 $('#createPost').on('click', function () {
                     $.sammy(function(){
                         this.trigger('redirectUrl', {url: "#/post/create"});

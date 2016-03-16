@@ -39,7 +39,7 @@ var app = app || {};
         });
 
         this.get('#/post/create', function () {
-           postController.createPost();
+           postController.createPostView(wrapper);
         });
 
         this.get('#/about', function() {
@@ -68,6 +68,11 @@ var app = app || {};
 
         this.bind('visitCounter', function (e, data) {
             postController.visitCounter(data);
+        });
+
+        this.bind('createPost', function (e, data) {
+            console.log(data);
+           postController.createNewPost(wrapper, data);
         });
     });
 
