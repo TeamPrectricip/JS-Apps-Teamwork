@@ -29,9 +29,11 @@ var app = app || {};
         this.get('#/login', function() {
             blogOwnerController.showLoginPage(wrapper);
         });
+
         this.get('#/logout', function() {
             blogOwnerController.logout();
         });
+
         this.get('#/post/details/:id', function(){
             postController.getPostById(wrapper ,this.params['id']);
         });
@@ -41,7 +43,8 @@ var app = app || {};
         });
 
         this.get('#/about', function() {
-            app.showAboutPage(wrapper);
+               app.showAboutPage(wrapper);
+        });
 
         this.get('#/post/byTag/:tag', function(){
             postController.getPostByTagName(wrapper ,this.params['tag']);
