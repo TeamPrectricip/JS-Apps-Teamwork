@@ -36,15 +36,13 @@ var app = app || {};
             postController.getPostById(wrapper ,this.params['id']);
         });
 
-        this.get('#/post/create', function () {
-           postController.createPost();
-        });
-
+<<<<<<< HEAD
         this.get('#/about', function() {
             app.showAboutPage(wrapper);
-
+=======
         this.get('#/post/byTag/:tag', function(){
             postController.getPostByTagName(wrapper ,this.params['tag']);
+>>>>>>> cb89d72236baf7fa7220d95757750aa8082c3a88
         });
 
         this.bind('login', function(e, data) {
@@ -61,10 +59,6 @@ var app = app || {};
 
         this.bind('get-comments', function (e, data) {
             commentController.getCommentsByPostId(data);
-        });
-
-        this.bind('visitCounter', function (e, data) {
-            postController.visitCounter(data);
         });
     });
 
