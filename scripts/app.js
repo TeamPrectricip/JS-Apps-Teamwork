@@ -3,7 +3,7 @@ var app = app || {};
 (function() {
     var router = Sammy(function() {
         var wrapper = $('#wrapper');
-        var content = $('.content');
+        var selector = $('.content');
         var requester = Object.create(app.requester).init('kid_-y1QostQk-', 'owner', '1234');
 
         var homeView = app.homeView.load();
@@ -23,11 +23,11 @@ var app = app || {};
 
 
         this.get('#/home', function() {
-            homeController.loadAllPosts(wrapper);
+            homeController.loadAllPosts(selector);
         });
 
         this.get('#/login', function() {
-            blogOwnerController.showLoginPage(wrapper);
+            blogOwnerController.showLoginPage(selector);
         });
 
         this.get('#/logout', function() {
@@ -35,19 +35,19 @@ var app = app || {};
         });
 
         this.get('#/post/details/:id', function(){
-            postController.getPostById(wrapper ,this.params['id']);
+            postController.getPostById(selector ,this.params['id']);
         });
 
         this.get('#/post/create', function () {
-           postController.createPostView(wrapper);
+           postController.createPostView(selector);
         });
 
         this.get('#/about', function() {
-               app.showAboutPage(wrapper);
+               app.showAboutPage(selector);
         });
 
         this.get('#/post/byTag/:tag', function(){
-            postController.getPostByTagName(wrapper ,this.params['tag']);
+            postController.getPostByTagName(selector ,this.params['tag']);
         });
 
         this.bind('login', function(e, data) {
@@ -72,7 +72,7 @@ var app = app || {};
 
         this.bind('createPost', function (e, data) {
             console.log(data);
-           postController.createNewPost(wrapper, data);
+           postController.createNewPost(selector, data);
         });
     });
 
