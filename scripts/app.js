@@ -36,6 +36,10 @@ var app = app || {};
             postController.getPostById(wrapper ,this.params['id']);
         });
 
+        this.get('#/post/create', function () {
+           postController.createPost();
+        });
+
         this.get('#/post/byTag/:tag', function(){
             postController.getPostByTagName(wrapper ,this.params['tag']);
         });
@@ -54,6 +58,10 @@ var app = app || {};
 
         this.bind('get-comments', function (e, data) {
             commentController.getCommentsByPostId(data);
+        });
+
+        this.bind('visitCounter', function (e, data) {
+            postController.visitCounter(data);
         });
     });
 

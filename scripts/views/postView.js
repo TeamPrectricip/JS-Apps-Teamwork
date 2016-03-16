@@ -6,24 +6,13 @@ app.postView = (function () {
             var rendered = Mustache.render(templ, data);
             $(selector).html(rendered);
             $.sammy(function () {
-                this.trigger('get-comments', {parent: $('.comments'), id: data.posts[0]._id})
+                this.trigger('get-comments', {parent: $('.comments'), id: data.posts[0]._id});
+                this.trigger('visitCounter', {post: data.posts[0]});
             });
 
-            function postViewCount(postId) {
+            var counter = data.posts[0].counter;
+            $('#visit-count').text('Visit for ' + counter + '  time');
 
-                var localstorageItem = 'totalCount-' + postId;
-                if (!localStorage.getItem(localstorageItem)) {
-
-                    localStorage.setItem(localstorageItem, 0);
-                }
-                var currentCount = parseInt(localStorage.getItem(localstorageItem));
-                currentCount++;
-                localStorage.setItem(localstorageItem, currentCount);
-
-                $('#visit-count').text('Visit for ' + currentCount + '  time');
-            }
-
-            postViewCount(data.posts[0]._id)
             $('#addComment').on('click', function () {
                 var textArea = $('#textArea').val();
                 $.sammy(function () {
@@ -31,13 +20,12 @@ app.postView = (function () {
                     $('#textArea').val(null);
                 });
             });
-        })
+        });
     };
 
     function showFilteredPosts(selector, data) {
         $.get('templates/filteredPosts.html', function (templ) {
             var rendered = Mustache.render(templ, data);
-            console.log(data);
             $(selector).html(rendered);
             $('.featured-post').on('click', function () {
                 var id = $(this).attr("data-id");
@@ -59,17 +47,23 @@ app.postView = (function () {
                 $.sammy(function () {
                     this.trigger('redirectUrl', {url: url})
                 });
-            })
-        })
+            });
+        });
     };
 
+    function createNewPost(selector){
+        $.get('templates/createNewPost.html', function (templ) {
+             var rendered = Mustache.render(templ);
+        });
+    };
 
 
     return {
         load: function () {
             return {
                 showPost: showPost,
-                showFilteredPosts: showFilteredPosts
+                showFilteredPosts: showFilteredPosts,
+                createNewPost: createNewPost
             }
         }
     }

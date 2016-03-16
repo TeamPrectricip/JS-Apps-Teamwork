@@ -15,6 +15,15 @@ app.postModel = (function() {
 
         getAllPosts: function() {
             return this._requester.get(this.serviceUrl, false);
+        },
+
+        updateVisitCounter: function(id, post){
+            var requestUrl = this.serviceUrl + "/" + id;
+            return this._requester.put(requestUrl, post, false);
+        },
+
+        createPost: function(post){
+            return this._requester.post(this.serviceUrl, post, false);
         }
     }
 

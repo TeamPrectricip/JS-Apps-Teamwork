@@ -32,6 +32,13 @@ app.homeView = (function () {
                     .attr('id', 'logout-btn')
                     .attr('href', '#/logout')
                     .text('Logout');
+
+                $('#createPost').on('click', function () {
+                    $.sammy(function(){
+                        this.trigger('redirectUrl', {url: "#/post/create"});
+                    });
+                });
+
             }
         });
     };

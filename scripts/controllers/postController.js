@@ -20,8 +20,9 @@ app.postController = function () {
                         post._id,
                         post.title,
                         post.text,
-                        post.tags
-
+                        post.tags,
+                        post.author,
+                        post.counter
                     ));
                 });
                 _this._viewBag.showPost(selector, data);
@@ -40,8 +41,9 @@ app.postController = function () {
                         post._id,
                         post.title,
                         post.text,
-                        post.tags
-
+                        post.tags,
+                        post.author,
+                        post.counter
                     ));
                 });
                 _this.filterPost = {
@@ -55,6 +57,28 @@ app.postController = function () {
 
     };
 
+    PostController.prototype.visitCounter = function(post){
+        var _this = this;
+        var postModel = post.post;
+        var model = {
+          title: postModel.title,
+            text: postModel.text,
+            tags: postModel.tags,
+            author: postModel.author,
+            counter: postModel.counter+1
+        };
+        this._model.updateVisitCounter(postModel._id, model).done();
+    };
+
+    PostController.prototype.createPostView = function(selector){
+        this._viewBag.createNewPost(selector);
+    };
+
+    PostController.prototype.createNewPost = function(selector, post){
+
+    };
+
+
     PostController.prototype.filter = function(posts, tag){
         var _this = this;
         posts.forEach(function(post){
@@ -63,6 +87,8 @@ app.postController = function () {
             }
         });
     };
+
+
 
 
     return {
