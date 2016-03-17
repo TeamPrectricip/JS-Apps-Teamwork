@@ -17,14 +17,19 @@ body {
           cursor: pointer; }
       body .content .inner-wrap .featured-posts .featured-post img {
         max-width: 100%; }
-    body .content aside {
-      background: #FFFFFF; }
-      body .content aside .recent-posts {
-        margin-top: 93px; }
-        body .content aside .recent-posts h2 {
-          text-align: center; }
-        body .content aside .recent-posts ul {
-          list-style-type: none; }
+    body .content aside .recent-posts {
+      background: #FFFFFF;
+      margin-top: 93px;
+      margin-bottom: 20px; }
+      body .content aside .recent-posts h2 {
+        text-align: center; }
+      body .content aside .recent-posts ul {
+        list-style-type: none; }
+    body .content aside .tag-list {
+      background: #FFFFFF;
+      height: 200px; }
+      body .content aside .tag-list h2 {
+        text-align: center; }
   body footer {
     text-align: center;
     padding: 20px 0;
@@ -81,7 +86,7 @@ body .form {
       text-decoration: none; }
 
 .main-header {
-  background-image: url("http://2o7fsh4anuayrnrhe3us6v71.wpengine.netdna-cdn.com/wp-content/uploads/2015/06/new-york-city.jpg");
+  background-image: url("../images/new-york-city.jpg");
   height: 400px; }
 
 /*# sourceMappingURL=style.css.map */

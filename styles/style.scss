@@ -39,9 +39,11 @@ body {
 
 
         aside {
-            background: #FFFFFF;
             .recent-posts {
+                background: #FFFFFF;
                 margin-top: 93px;
+                margin-bottom: 20px;
+
                 h2 {
                     text-align: center;
                 }
@@ -49,6 +51,16 @@ body {
                     list-style-type: none;
                 }
             }
+
+            .tag-list {
+                background: #FFFFFF;
+                height: 200px;
+
+                h2 {
+                    text-align: center;
+                }
+            }
+
         }
     }
 
@@ -130,7 +142,7 @@ body {
 }
 
 .main-header {
-    background-image: url('http://2o7fsh4anuayrnrhe3us6v71.wpengine.netdna-cdn.com/wp-content/uploads/2015/06/new-york-city.jpg');
+    background-image: url('../images/new-york-city.jpg');
 
     height: 400px;
 }
