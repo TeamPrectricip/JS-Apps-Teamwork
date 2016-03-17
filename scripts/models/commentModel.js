@@ -14,7 +14,7 @@ app.commentModel = (function() {
         },
 
         addComment: function(data) {
-        return this._requester.post(this.serviceUrl, data, false)
+            return this._requester.post(this.serviceUrl, data, false)
          }
     }
 

@@ -1,15 +1,17 @@
 var app = app || {};
 
-app.commentController = function () {
-    function CommentController(model, viewBag) {
-        this._model = model;
-        this._viewBag = viewBag;
-    }
+app.commentController = (function () {
+    var commentController = {
+        init: function(model, viewBag) {
+            this._model = model;
+            this._viewBag = viewBag;
+            return this;
+        },
 
-    CommentController.prototype.getCommentsByPostId = function (data) {
-        var _this = this;
+        getCommentsByPostId: function (data) {
+            var _this = this;
 
-        this._model.getCommentsByPostId(data.id)
+            this._model.getCommentsByPostId(data.id)
             .then(function (comments) {
                 var result = {
                     comments: []
@@ -24,20 +26,20 @@ app.commentController = function () {
                 });
                 _this._viewBag.showComments(data.parent, result);
             }).done();
-    };
+        },
 
-    CommentController.prototype.addComment = function(data) {
-        var _this = this;
-        var commentOutputModel = {
-            content: data.content,
-            post: {
-                _type: 'KinveyRef',
-                _id: data.postId,
-                _collection: 'posts'
-            }
-        };
+        addComment: function(data) {
+            var _this = this;
+            var commentOutputModel = {
+                content: data.content,
+                post: {
+                    _type: 'KinveyRef',
+                    _id: data.postId,
+                    _collection: 'posts'
+                }
+            };
 
-        this._model.addComment(commentOutputModel)
+            this._model.addComment(commentOutputModel)
             .then(function() {
                 var model = {
                     parent : data.parent,
@@ -45,11 +47,8 @@ app.commentController = function () {
                 }
                 _this.getCommentsByPostId(model);
             })
-    };
-
-    return {
-        load: function (model, viewBag) {
-            return new CommentController(model, viewBag);
         }
-    };
-}();
+    }
+
+    return commentController;
+}());
