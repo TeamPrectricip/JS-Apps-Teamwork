@@ -9,6 +9,10 @@
                 <div class="panel-body">
                     <h2>{{title}}</h2>
                     {{text}}
+
+                    <div id="tags">Tags: {{#tags}}
+                        <a href="#/post/byTag/{{.}}">{{.}}</a>
+                    {{/tags}}</div>
                 </div>
                 <div class="panel-footer"><div id="visit-count"></div></div>
             </div>
