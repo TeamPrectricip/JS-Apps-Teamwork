@@ -37,6 +37,7 @@ app.postView = (function () {
     function showFilteredPosts(selector, data) {
         $.get('templates/filteredPosts.html', function (templ) {
             var rendered = Mustache.render(templ, data);
+            console.log(data);
             $(selector).html(rendered);
             $('.featured-post').on('click', function () {
                 var id = $(this).attr("data-id");
