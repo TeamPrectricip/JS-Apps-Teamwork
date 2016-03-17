@@ -28,10 +28,8 @@ app.homeView = (function () {
 
             /*Change ID and inner text of Login button when user is logged*/
             if (sessionStorage.userId) {
-                $('#login-btn')
-                    .attr('id', 'logout-btn')
-                    .attr('href', '#/logout')
-                    .text('Logout');
+                $('#login-btn').hide();
+                $('#logout-btn').show();
 
                 var button = $('<button/>', {
                     text: "Create Post",
@@ -52,6 +50,9 @@ app.homeView = (function () {
                     });
                 });
 
+            } else {
+                $('#login-btn').show();
+                $('#logout-btn').hide();
             }
         });
     };
